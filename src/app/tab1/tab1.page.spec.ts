@@ -1,26 +1,29 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+@Component({
+  selector: 'app-weather',
+  templateUrl: './weather.component.html',
+  styleUrls: ['./weather.component.scss']
+})
+export class WeatherComponent implements OnInit {
+  temp: number;
+  city: string = 'Moscow';
+  weather: any = { weather: [{ main: '', description: '', icon: '' }] };
 
-import { Tab1Page } from './tab1.page';
+  constructor(private http: HttpClient) {}
 
-describe('Tab1Page', () => {
-  let component: Tab1Page;
-  let fixture: ComponentFixture<Tab1Page>;
+  ngOnInit() {
+    this.getWeather();
+  }
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [Tab1Page],
-      imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
-    }).compileComponents();
+  getWeather() {
+    const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${apiKey}`;
 
-    fixture = TestBed.createComponent(Tab1Page);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    this.http.get(url).subscribe((data: any) => {
+      this.temp = data.main.temp;
+      this.weather = data;
+    });
+  }
+}

@@ -24,6 +24,7 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+@import "~weather-icons/css/weather-icons.min.css";
 
 /**
  * Ionic Dark Mode
@@ -35,3 +36,37 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Light mode */
+body {
+    --ion-background-color: #000000;
+      --ion-text-color: #ffffff;
+  }
+  
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    body {
+      --ion-background-color: #000000;
+      --ion-text-color: #ffffff;
+    }
+    
+    ion-header, ion-toolbar, ion-title {
+      --background: #222428;
+      --color: #ffffff;
+    }
+  
+    ion-card {
+      --background: #333333;
+      --color: #ffffff;
+    }
+  
+    ion-card-header {
+      --background: #444444;
+      --color: #ffffff;
+    }
+  
+    ion-card-content {
+      --background: #333333;
+      --color: #ffffff;
+    }
+  }

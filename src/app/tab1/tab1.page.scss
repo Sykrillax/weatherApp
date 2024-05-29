@@ -1,0 +1,29 @@
+ion-content {
+  --background: #333;
+  --ion-text-color: #fff; /* Warna teks putih */
+}
+
+.weather-container {
+  text-align: center;
+  color: #fff; /* Warna teks putih */
+  padding-top: 50px;
+}
+
+.temperature {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.weather-icon {
+  font-size: 120px;
+  color: #ccc; /* Warna ikon cuaca */
+}
+
+.description, .city {
+  margin-top: 10px;
+}
+
+.city {
+  font-size: 18px;
+  font-weight: bold;
+}

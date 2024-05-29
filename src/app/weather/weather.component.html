@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Cuaca Sekarang
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Cuaca Sekarang</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <div *ngFor="let weather of weatherList">
+      <h1 class="ion-60p">{{ weather.main.temp - 273.15 | number:'1.0-1' }} °C</h1>
+      <img src="http://openweathermap.org/img/wn/{{ weather.weather[0].icon }}@2x.png" height="180px" />
+      <h1 class="ion-30p">
+        {{ city.name }}<br />
+        {{ weather.weather[0].main }}(<small>{{ weather.weather[0].description }}</small>)
+      </h1>
+      <p>{{ weather.dt_txt }}</p>
+    </div>
+  </div>
+</ion-content>

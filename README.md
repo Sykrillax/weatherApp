@@ -1,6 +1,6 @@
 # Weather App
 
-Aplikasi Cuaca sederhana yang dibangun dengan Ionic Framework. Aplikasi ini memungkinkan pengguna untuk melihat kondisi cuaca saat ini dan ramalan cuaca selama lima hari ke depan.
+Weather App adalah aplikasi cuaca yang dibangun dengan menggunakan framework Ionic. Aplikasi ini dirancang untuk menampilkan informasi cuaca terkini serta ramalan cuaca selama lima hari ke depan dengan antarmuka yang minimalis dan menarik. Aplikasi ini juga memungkinkan pengguna untuk menyimpan lokasi favorit dan mengakses informasi cuaca untuk lokasi tersebut dengan mudah.
 
 ## Fitur
 
